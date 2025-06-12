@@ -1,0 +1,441 @@
+/* Base styles for the body */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Normal light background */
+    color: #333; /* Normal text color */
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    line-height: 1.6;
+}
+
+/* General section styling for both modes */
+.website-section {
+    width: 90%;
+    max-width: 960px; /* Increased max-width for more content */
+    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    text-align: center;
+    display: none; /* Hidden by default */
+    margin: 20px auto; /* Centered with auto margins */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.website-section.active {
+    display: block; /* Show the active section */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .website-section {
+        width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+    /* Adjust font sizes for mobile for better readability */
+    #normal-website header h1 {
+        font-size: 1.8em;
+    }
+    #normal-website main p, #normal-website main li {
+        font-size: 0.95em;
+    }
+    #hacker-website header h1 {
+        font-size: 1.6em;
+    }
+    .hacker-store-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .store-item {
+        padding: 10px;
+    }
+    .item-icon {
+        font-size: 2.5em;
+    }
+    .store-item h3 {
+        font-size: 1.1em;
+    }
+    .store-item p {
+        font-size: 0.85em;
+    }
+    .store-item .price {
+        font-size: 1em;
+    }
+    .buy-btn {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+    .comment-section h2 {
+        font-size: 1em;
+    }
+    #secret-message-input, #send-message-btn {
+        font-size: 0.9em;
+    }
+}
+
+/* Styles for the Normal About Me Website */
+#normal-website header h1 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+#normal-website header .tagline {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#normal-website main section {
+    background-color: #fcfcfc;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+#normal-website main h2 {
+    color: #0056b3;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+#normal-website main p {
+    margin-bottom: 15px;
+}
+
+#normal-website main ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#normal-website main ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#normal-website main ul li::before {
+    content: '✅'; /* Checkmark icon */
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: #e9f7ff;
+    color: #0056b3;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    background-color: #d0efff;
+}
+
+/* Social Links Styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.social-links a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#normal-website footer {
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Comment Section Styling */
+.comment-section {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    text-align: left;
+    position: relative; /* For positioning the secret icon */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.comment-section h2 {
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#secret-message-input {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 11px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly more rounded */
+    min-height: 90px; /* Slightly taller */
+    resize: vertical;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    font-family: 'Inter', sans-serif;
+}
+
+#send-message-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px; /* Larger button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em; /* Slightly larger text */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+#send-message-btn:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.message-status {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #666;
+    text-align: center;
+    font-weight: 500;
+}
+
+.hidden-trigger-icon {
+    font-size: 1.8em; /* Larger icon */
+    cursor: pointer;
+    position: absolute;
+    right: 25px; /* Adjusted position */
+    bottom: 25px; /* Adjusted position */
+    display: none; /* Hidden by default */
+    color: rgba(0, 0, 0, 0.2); /* Very subtle color */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hidden-trigger-icon:hover {
+    color: rgba(0, 0, 0, 0.5); /* More visible on hover */
+    transform: rotate(30deg) scale(1.1); /* More pronounced rotation and scale */
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+
+/* Styles for the Hacker Store Website */
+#hacker-website {
+    background-color: #0a0a0a; /* Deep black background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Roboto Mono', monospace; /* Monospaced font */
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.7); /* Stronger glowing green shadow */
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #005500; /* Subtle green border */
+}
+
+#hacker-website header h1 {
+    color: #00cc00;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00ff00; /* Stronger glow */
+    font-size: 2.8em; /* Larger heading */
+    letter-spacing: 2px;
+}
+
+#hacker-website header p {
+    font-size: 1.1em;
+    color: #00aa00;
+    margin-bottom: 40px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.hacker-text-glow {
+    animation: pulse-glow 1.5s infinite alternate; /* Pulsing glow effect */
+}
+
+@keyframes pulse-glow {
+    0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+    100% { text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00; }
+}
+
+/* Category section in Hacker Store */
+.category-section {
+    background-color: #1a1a1a;
+    border: 1px solid #005500;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.category-section h2 {
+    font-size: 1.8em;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #00ff00;
+    border-bottom: 2px dashed #008800; /* Dashed separator */
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger items */
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.store-item {
+    background-color: #0d0d0d;
+    border: 1px solid #007700;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative; /* For glitch effect */
+    overflow: hidden;
+}
+
+.store-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.9);
+    background-color: #121212;
+}
+
+/* Glitch effect on hover (subtle) */
+.store-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,255,0,0.1), rgba(0,255,0,0.05));
+    animation: glitch-overlay 0.2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glitch-overlay {
+    0% { transform: translate(1px, 1px); opacity: 0.1; }
+    50% { transform: translate(-1px, -1px); opacity: 0.15; }
+    100% { transform: translate(1px, 1px); opacity: 0.1; }
+}
+
+.item-icon {
+    font-size: 3.5em; /* Larger icons */
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+.store-item h3 {
+    color: #00ff00;
+    font-size: 1.4em; /* Larger item titles */
+    margin-bottom: 8px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.store-item p {
+    font-size: 1em;
+    color: #00cc00;
+    margin-bottom: 12px;
+}
+
+.store-item .price {
+    font-weight: bold;
+    color: #ff3333; /* More vibrant red for price */
+    font-size: 1.3em; /* Larger price */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255,51,51,0.7);
+}
+
+.buy-btn {
+    background-color: #00cc00;
+    color: #0a0a0a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+    position: relative; /* For interactive effects */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.buy-btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.buy-btn::after { /* Glitch effect for button */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.buy-btn:hover::after {
+    transform: translateX(0%);
+}
+
+#hacker-website footer {
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #00aa00;
+    text-shadow: 0 0 5px #00ff00;
+}
